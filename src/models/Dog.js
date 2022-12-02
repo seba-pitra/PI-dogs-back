@@ -21,13 +21,8 @@ module.exports = (sequelize) => {
         unique: true,
         validate: {
           customValidator(name) {
-            for (const letter of name) {
-              if (!isNaN(letter)) {
-                throw new Error("Name must not have numbers");
-              }
-            }
             if (!isNaN(name)) {
-              throw new Error("Name must not have numbers");
+              throw new Error("Name must not be number");
             }
           },
         },
