@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
         validate: {
           customValidator(name) {
             if (!isNaN(name)) {
-              throw new Error("Name must not be number");
+              throw new Error("Name must not be a number");
             }
           },
         },
